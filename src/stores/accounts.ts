@@ -52,7 +52,7 @@ export const useAccountsStore = defineStore('accounts', () => {
   }
 
   const deleteAccount = (id: string) => {
-    accounts.value = accounts.value.filter((account) => account.id !== id)
+    accounts.value = accounts.value.filter((account: IAccountModel) => account.id !== id)
     persistAccountsToStorage()
   }
 

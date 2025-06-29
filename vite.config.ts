@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
   plugins: [vue(), vueDevTools()],
+  base: '/test_task_saa_soft/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

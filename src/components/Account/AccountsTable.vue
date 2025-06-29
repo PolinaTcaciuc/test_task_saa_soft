@@ -6,7 +6,8 @@ import { defaultAccountColumnElements, UI_ELEMENTS } from '@/constants'
 import { validateLogin, validatePassword } from '@/utils/validators'
 import type { Component } from 'vue'
 import type { TableInstance, TableColumnCtx } from 'element-plus'
-import type IAccountModel from '@/types/IAccount'
+import type IAccountModel from '@/types/IAccountModel'
+import type { IAccountColumn } from '@/types/IAccountColumn'
 
 const tableLayout = ref<TableInstance['tableLayout']>('fixed')
 const componentRefs = ref<Record<string, Component>>({})
@@ -23,25 +24,18 @@ const validateAccountFields = (account: IAccountModel) => {
   const isPersonalAccount = type === 1
 
   return {
-    loginValid: validateLogin(login),
-    passwordValid: isPersonalAccount ? validatePassword(password) : true,
-    isValid: isPersonalAccount ? validateLogin(login) && validatePassword(password) : validateLogin(login),
+    loginValid: validateLogin(login ?? ''),
+    passwordValid: isPersonalAccount ? validatePassword(password ?? '') : true,
+    isValid: isPersonalAccount ? validateLogin(login ?? '') && validatePassword(password ?? '') : validateLogin(login ?? ''),
   }
 }
 
-const handleAfterEdit = (
-  row: IAccountModel,
-  column: TableColumnCtx<IAccountModel> & {
-    name: string
-    ref: string
-    props: Record<string, unknown>
-  }
-) => {
+const handleAfterEdit = (row: IAccountModel, column: IAccountColumn) => {
   const { isValid, loginValid, passwordValid } = validateAccountFields(row)
   const refKey = `${column.ref}_${row.id}`
   const componentRef = componentRefs.value[refKey]
 
-  if (componentRef?.setWarning && column.props?.required) {
+  if ('setWarning' in componentRef && column.props?.required) {
     const fieldIsValid = column.name === 'login' ? loginValid : column.name === 'password' ? passwordValid : true
     componentRef.setWarning(!fieldIsValid)
   }
@@ -58,7 +52,7 @@ const handleClick = (id: string, columnName: string) => {
   }
 }
 
-const setComponentRef = (el: HTMLElement, column: TableColumnCtx<IAccountModel>, row: IAccountModel) => {
+const setComponentRef = (el: HTMLElement, column: IAccountColumn, row: IAccountModel) => {
   if (el) {
     componentRefs.value[`${column.ref}_${row.id}`] = el
   }
