@@ -1,5 +1,5 @@
-@forward './_reset';
-@forward './_common';
-@forward './_global';
-@forward './editable-components';
-@forward './containers';
+@use './_reset';
+@use './_common';
+@use './_global';
+@use './containers';
+@use './base-editable-components';
