@@ -35,7 +35,7 @@ defineExpose({
 </script>
 
 <template>
-  <div class="editable">
+  <div class="base-editable">
     <el-input
       v-model="model"
       v-bind="$attrs"
