@@ -19,7 +19,7 @@ export const useAccountsStore = defineStore('accounts', () => {
   const accounts = ref<IAccountModel[]>(loadAccounts())
 
   const persistAccountsToStorage = () => {
-    const prepared = accounts.value.map((account) => ({
+    const prepared = accounts.value.map((account: IAccountModel) => ({
       ...account,
       label: labelTransformer.toArray(account.label),
     }))
@@ -35,7 +35,7 @@ export const useAccountsStore = defineStore('accounts', () => {
   }
 
   const saveAccount = (account: IAccountModel) => {
-    const existingIndex = accounts.value.findIndex((a) => a.id === account.id)
+    const existingIndex = accounts.value.findIndex((a: IAccountModel) => a.id === account.id)
 
     const normalized = {
       ...account,
@@ -52,7 +52,7 @@ export const useAccountsStore = defineStore('accounts', () => {
   }
 
   const deleteAccount = (id: string) => {
-    accounts.value = accounts.value.filter((account) => account.id !== id)
+    accounts.value = accounts.value.filter((account: IAccountModel) => account.id !== id)
     persistAccountsToStorage()
   }
 
