@@ -1,0 +1,9 @@
+@use './_vars' as *;
+
+.base-editable .el-input.warning .el-input__wrapper {
+  box-shadow: 0 0 0 1px $warning-color inset;
+}
+
+.base-editable .el-input.warning .el-input__wrapper .el-input__inner::placeholder {
+  color: $warning-color;
+}
