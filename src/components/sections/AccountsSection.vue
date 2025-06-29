@@ -10,7 +10,7 @@ const { addNewAccount } = useAccountsStore()
   <section class="accounts container">
     <div class="accounts__top">
       <div class="accounts__head">
-        <h1>Учетные записи</h1>
+        <h1 class="title_large">Учетные записи</h1>
         <BaseButton @click="addNewAccount">+</BaseButton>
       </div>
       <InformationHint> Для указания нескольких меток для одной пары логин/пароль используйте разделитель ; </InformationHint>
