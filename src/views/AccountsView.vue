@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import AccountsSection from '@/components/sections/AccountsSection.vue'
+</script>
 
 <template>
-  <main></main>
+  <AccountsSection />
 </template>
