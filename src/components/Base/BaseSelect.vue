@@ -13,7 +13,7 @@ const model = defineModel()
 <template>
   <el-select
     v-model="model"
-    class="editable"
+    class="base-editable"
   >
     <el-option
       v-for="item in options"
