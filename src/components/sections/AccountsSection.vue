@@ -2,6 +2,7 @@
 import { useAccountsStore } from '@/stores/accounts'
 import BaseButton from '@/components/Base/BaseButton.vue'
 import InformationHint from '@/components/Base/InformationHint.vue'
+import AccountsTable from '@/components/Account/AccountsTable.vue'
 const { addNewAccount } = useAccountsStore()
 </script>
 
@@ -14,6 +15,7 @@ const { addNewAccount } = useAccountsStore()
       </div>
       <InformationHint> Для указания нескольких меток для одной пары логин/пароль используйте разделитель ; </InformationHint>
     </div>
+    <AccountsTable @deleteAccount="deleteAccountHandler" />
   </section>
 </template>
 
