@@ -1,7 +1,7 @@
 # Тестовое задание для компании SaaSoft
+[Демо](https://polinatcaciuc.github.io/test_task_saa_soft/)
 
 ![image](https://github.com/user-attachments/assets/62feba8b-2bd3-4c78-82b0-1084f5adb55b)
-
 Этот шаблон поможет вам начать разработку с использованием Vue 3 и Vite.
 
 ## Рекомендуемая настройка среды разработки (IDE)
