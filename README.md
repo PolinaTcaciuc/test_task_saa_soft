@@ -6,7 +6,7 @@
 
 ## Рекомендуемая настройка среды разработки (IDE)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (и отключите Vetur).
 
 ## Поддержка типов для импортов `.vue` в TypeScript
 
