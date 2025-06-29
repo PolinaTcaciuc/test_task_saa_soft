@@ -15,7 +15,7 @@ const { addNewAccount } = useAccountsStore()
       </div>
       <InformationHint> Для указания нескольких меток для одной пары логин/пароль используйте разделитель ; </InformationHint>
     </div>
-    <AccountsTable @deleteAccount="deleteAccountHandler" />
+    <AccountsTable />
   </section>
 </template>
 
